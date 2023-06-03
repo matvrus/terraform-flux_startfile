@@ -1,10 +1,10 @@
 module "github-repository" {
-    source = "github.com/den-vasyliev/tf-github-repository"
-    github_owner = var.GITHUB_OWNER
-    github_token = var.GITHUB_TOKEN
-    repository_name = var.FLUX_GITHUB_REPO
-    public_key_openssh = module.tls_private_key.public_key_openssh
-    public_key_openssh_title = "flux0"
+  source                   = "github.com/den-vasyliev/tf-github-repository"
+  github_owner             = var.GITHUB_OWNER
+  github_token             = var.GITHUB_TOKEN
+  repository_name          = var.FLUX_GITHUB_REPO
+  public_key_openssh       = module.tls_private_key.public_key_openssh
+  public_key_openssh_title = "flux0"
 }
 
 module "gke_cluster" {
@@ -25,7 +25,7 @@ module "flux_bootstrap" {
 }
 
 module "tls_private_key" {
-    source = "github.com/den-vasyliev/tf-hashicorp-tls-keys"
+  source = "github.com/den-vasyliev/tf-hashicorp-tls-keys"
 }
 
 terraform {
